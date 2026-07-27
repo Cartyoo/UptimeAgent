@@ -5,5 +5,6 @@ main: xyz.herberto.uptimeAgent.UptimeAgent
 api-version: '1.21.8'
 load: POSTWORLD
 
-authors: [ Siege Development ]
-website: https://siegedev.com
+authors: [ herberto ]
+website: https://foxes.cool
+prefix: "layeredy-server-agent"

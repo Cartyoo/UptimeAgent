@@ -1,0 +1,4 @@
+
+layeredy-uptime-token: ''
+interval-seconds: 60 # cannot be less than 60
+
