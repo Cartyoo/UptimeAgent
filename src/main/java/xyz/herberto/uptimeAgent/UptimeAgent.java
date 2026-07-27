@@ -32,7 +32,7 @@ public final class UptimeAgent extends JavaPlugin {
 
         agentVersion = getPluginMeta().getVersion();
 
-        new UptimeTask().runTaskTimerAsynchronously(this, 0L, 20L * 60L);
+        new UptimeTask().runTaskTimerAsynchronously(this, 0L, 20L * getConfig().getLong("interval-seconds"));
 
     }
 
