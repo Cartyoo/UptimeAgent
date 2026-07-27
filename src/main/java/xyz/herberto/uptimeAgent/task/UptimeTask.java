@@ -17,8 +17,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -103,7 +101,7 @@ public class UptimeTask extends BukkitRunnable {
 
             int statusCode = response.statusCode();
             if (statusCode >= 200 && statusCode < 300) {
-                UptimeAgent.getInstance().getLogger().info("reported OK (200) | lyrdy.co/serveragen");
+                UptimeAgent.getInstance().getLogger().info("reported OK (200) | lyrdy.co/serveragent");
             } else if(statusCode == 403) {
                 UptimeAgent.getInstance().getLogger().warning("ERROR 403: invalid token. Check 'layeredy-uptime-token' in your config.yml. Exiting. (lyrdy.co/server-agent-error)");
             } else if(statusCode == 429) {
