@@ -66,7 +66,7 @@ public class UptimeTask extends BukkitRunnable {
             long ramTotalBytes = Runtime.getRuntime().totalMemory();
             long freeRamBytes = Runtime.getRuntime().freeMemory();
             long maxRamBytes = Runtime.getRuntime().maxMemory();
-            double cpuUsagePercent = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class).getProcessCpuLoad();
+            double cpuUsagePercent = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class).getCpuLoad() * 100;
             long uptimeSeconds = TimeUnit.MILLISECONDS.toSeconds(ManagementFactory.getRuntimeMXBean().getUptime());
             String hostname = InetAddress.getLocalHost().getHostName();
             String agentVersion = UptimeAgent.getAgentVersion();
@@ -88,8 +88,6 @@ public class UptimeTask extends BukkitRunnable {
                             cpuCores,
                             String.valueOf(ramTotalBytes)
                     )
-
-
             );
             String body = gson.toJson(payload);
 
